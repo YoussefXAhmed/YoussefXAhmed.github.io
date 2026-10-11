@@ -17,7 +17,6 @@ const SITE = {
 
   contact: {
     email: "yossefayyman@gmail.com",
-    phone: "+20 102 079 7395",
     linkedin: "https://www.linkedin.com/in/youssef911/",
     github: "https://github.com/YoussefXAhmed",
   },
