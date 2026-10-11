@@ -74,14 +74,12 @@ function render() {
     )
     .join("");
 
-  $("experienceList").innerHTML = SITE.experience
-    .map(
-      (e) => `<div class="card">
+  const timelineCard = (e) => `<div class="card">
         <div class="tl-head"><h4>${t(e.role)}</h4><span class="period">${t(e.period)}</span></div>
         <div class="tl-sub">${t(e.company)}</div>
-        <ul>${t(e.points).map((p) => `<li>${p}</li>`).join("")}</ul></div>`
-    )
-    .join("");
+        <ul>${t(e.points).map((p) => `<li>${p}</li>`).join("")}</ul></div>`;
+  $("experienceList").innerHTML = SITE.experience.map(timelineCard).join("");
+  $("internshipsList").innerHTML = SITE.internships.map(timelineCard).join("");
 
   $("filters").innerHTML = Object.keys(UI.filters)
     .filter((k) => k === "all" || SITE.projects.some((p) => p.category === k))
@@ -402,10 +400,14 @@ function startParticles() {
   $("home").addEventListener("pointerleave", () => (mouse = { x: -999, y: -999 }));
   new IntersectionObserver(([en]) => (visible = en.isIntersecting)).observe(canvas);
 
+  let accent, accentTheme;
   const draw = () => {
     requestAnimationFrame(draw);
     if (!visible || document.hidden) return;
-    const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent-2").trim() || "#8b7cf6";
+    if (accentTheme !== document.documentElement.dataset.theme) {
+      accentTheme = document.documentElement.dataset.theme;
+      accent = getComputedStyle(document.documentElement).getPropertyValue("--accent-2").trim() || "#8b7cf6";
+    }
     ctx.clearRect(0, 0, w, h);
     for (const p of points) {
       p.x += p.vx;
@@ -442,25 +444,6 @@ function startParticles() {
 }
 
 $("toTop").addEventListener("click", () => scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" }));
-
-function hideLoader() {
-  const loader = $("loader");
-  if (!loader || loader.classList.contains("done")) return;
-  loader.classList.add("done");
-  document.body.classList.remove("loading");
-  setTimeout(() => loader.remove(), 600);
-}
-
-if (reducedMotion || sessionStorage.getItem("seenLoader")) {
-  hideLoader();
-} else {
-  sessionStorage.setItem("seenLoader", "1");
-  const minShow = new Promise((r) => setTimeout(r, 900));
-  const pageLoaded = new Promise((r) => (document.readyState === "complete" ? r() : addEventListener("load", r)));
-  Promise.all([minShow, pageLoaded]).then(hideLoader);
-  setTimeout(hideLoader, 2000);
-  $("loader").addEventListener("click", hideLoader);
-}
 
 applyTheme();
 refresh();

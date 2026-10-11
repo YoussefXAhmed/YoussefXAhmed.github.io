@@ -109,8 +109,11 @@ const SITE = {
         ],
       },
     },
+  ],
+
+  internships: [
     {
-      role: { en: "Embedded Systems Diploma (Internship)", ar: "دبلومة النظم المدمجة (تدريب)" },
+      role: { en: "Embedded Systems Diploma", ar: "دبلومة النظم المدمجة" },
       company: { en: "Information Technology Institute (ITI)", ar: "معهد تكنولوجيا المعلومات (ITI)" },
       period: { en: "Aug 2023 — Sep 2023", ar: "أغسطس ٢٠٢٣ — سبتمبر ٢٠٢٣" },
       points: {
@@ -207,6 +210,7 @@ const UI = {
     about: { en: "About", ar: "عني" },
     skills: { en: "Skills", ar: "المهارات" },
     experience: { en: "Experience", ar: "الخبرات" },
+    internships: { en: "Internships", ar: "التدريبات" },
     projects: { en: "Projects", ar: "المشاريع" },
     education: { en: "Education", ar: "التعليم" },
     contact: { en: "Contact", ar: "تواصل" },

@@ -31,25 +31,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/profile.jpg" as="image" fetchpriority="high" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="loading">
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-logo"><span>Y</span><span>A</span></div>
-    <div class="loader-bar"></div>
-  </div>
+<body>
   <div class="progress" id="progress"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
   <header class="navbar">
     <div class="nav-inner">
-      <a href="#home" class="logo">Y<span>A</span></a>
+      <a href="#home" class="logo" aria-label="Youssef Ahmed">YA</a>
       <nav class="nav-links" id="navLinks">
         <span class="nav-pill" id="navPill" aria-hidden="true"></span>
         <a href="#about" data-ui="nav.about"></a>
-        <a href="#skills" data-ui="nav.skills"></a>
-        <a href="#experience" data-ui="nav.experience"></a>
-        <a href="#projects" data-ui="nav.projects"></a>
         <a href="#education" data-ui="nav.education"></a>
+        <a href="#experience" data-ui="nav.experience"></a>
+        <a href="#internships" data-ui="nav.internships"></a>
+        <a href="#projects" data-ui="nav.projects"></a>
+        <a href="#skills" data-ui="nav.skills"></a>
         <a href="#contact" data-ui="nav.contact"></a>
       </nav>
       <div class="nav-actions">
@@ -83,7 +81,7 @@
       </div>
       <div class="hero-photo intro" style="--d: 0.3s">
         <div class="photo-frame">
-          <img src="assets/profile.jpg" alt="Youssef Ahmed" />
+          <div class="photo-clip"><img src="assets/profile.jpg" alt="Youssef Ahmed" width="768" height="1024" fetchpriority="high" decoding="async" /></div>
         </div>
       </div>
       <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
@@ -101,14 +99,21 @@
       <div class="services-grid" id="servicesGrid"></div>
     </section>
 
-    <section id="skills" class="section container reveal">
-      <h3 class="section-title" data-ui="nav.skills"></h3>
-      <div class="skills-grid" id="skillsGrid"></div>
+    <section id="education" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.education"></h3>
+      <div class="timeline" id="educationList"></div>
+      <h4 class="sub-title" data-ui="certifications"></h4>
+      <div class="certs" id="certsList"></div>
     </section>
 
     <section id="experience" class="section container reveal">
       <h3 class="section-title" data-ui="nav.experience"></h3>
       <div class="timeline" id="experienceList"></div>
+    </section>
+
+    <section id="internships" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.internships"></h3>
+      <div class="timeline" id="internshipsList"></div>
     </section>
 
     <section id="projects" class="section container reveal">
@@ -117,11 +122,9 @@
       <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <section id="education" class="section container reveal">
-      <h3 class="section-title" data-ui="nav.education"></h3>
-      <div class="timeline" id="educationList"></div>
-      <h4 class="sub-title" data-ui="certifications"></h4>
-      <div class="certs" id="certsList"></div>
+    <section id="skills" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.skills"></h3>
+      <div class="skills-grid" id="skillsGrid"></div>
     </section>
 
     <section id="contact" class="section container reveal">
@@ -139,7 +142,7 @@
     <svg viewBox="0 0 24 24"><path d="M12 5l-7 7h4.5v7h5v-7H19z" /></svg>
   </button>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -5,9 +5,8 @@
       <stop offset="1" stop-color="#8b7cf6"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#0d0f1a"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#g)" stroke-width="3"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="-1">
-    <tspan fill="#e8e9f1">Y</tspan><tspan fill="#f59e0b">A</tspan>
+  <rect width="64" height="64" rx="14" fill="#0d0f1a"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="url(#g)">
+    YA
   </text>
 </svg>
