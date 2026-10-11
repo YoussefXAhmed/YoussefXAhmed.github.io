@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youssef Ahmed | Portfolio</title>
+  <meta name="description" content="Youssef Ahmed — Computer Science Graduate | Technical & Business Operations" />
+  <meta name="theme-color" content="#0d0f1a" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="loading">
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-logo"><span>Y</span><span>A</span></div>
+    <div class="loader-bar"></div>
+  </div>
+  <div class="progress" id="progress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">Y<span>A</span></a>
+      <nav class="nav-links" id="navLinks">
+        <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+        <a href="#about" data-ui="nav.about"></a>
+        <a href="#skills" data-ui="nav.skills"></a>
+        <a href="#experience" data-ui="nav.experience"></a>
+        <a href="#projects" data-ui="nav.projects"></a>
+        <a href="#education" data-ui="nav.education"></a>
+        <a href="#contact" data-ui="nav.contact"></a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="langToggle" aria-label="Switch language">ع</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☀</button>
+        <button class="icon-btn menu-btn" id="menuToggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-bg" aria-hidden="true">
+      <canvas id="particles"></canvas>
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <div class="grid-overlay"></div>
+    </div>
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <p class="status intro" style="--d: 0s" id="status" hidden><span class="dot"></span><span data-ui="available"></span></p>
+        <p class="hello intro" style="--d: 0.1s" data-ui="hello"></p>
+        <h1 id="heroName" class="intro" style="--d: 0.2s"></h1>
+        <h2 class="intro" style="--d: 0.35s" id="heroRole"></h2>
+        <p id="heroTagline" class="tagline intro" style="--d: 0.5s"></p>
+        <div class="hero-buttons intro" style="--d: 0.65s">
+          <a id="cvBtn" class="btn primary" download data-ui="downloadCv"></a>
+          <a href="#contact" class="btn ghost" data-ui="contactMe"></a>
+        </div>
+        <div class="socials intro" style="--d: 0.8s" id="heroSocials"></div>
+      </div>
+      <div class="hero-photo intro" style="--d: 0.3s">
+        <div class="photo-frame">
+          <img src="assets/profile.jpg" alt="Youssef Ahmed" />
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+    <section id="about" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.about"></h3>
+      <div class="about-grid">
+        <p id="aboutText"></p>
+        <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <section id="services" class="section container reveal">
+      <h3 class="section-title" data-ui="whatIDo"></h3>
+      <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <section id="skills" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.skills"></h3>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </section>
+
+    <section id="experience" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.experience"></h3>
+      <div class="timeline" id="experienceList"></div>
+    </section>
+
+    <section id="projects" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.projects"></h3>
+      <div class="filters" id="filters" role="tablist"></div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="education" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.education"></h3>
+      <div class="timeline" id="educationList"></div>
+      <h4 class="sub-title" data-ui="certifications"></h4>
+      <div class="certs" id="certsList"></div>
+    </section>
+
+    <section id="contact" class="section container reveal">
+      <h3 class="section-title" data-ui="nav.contact"></h3>
+      <p class="contact-text" data-ui="contactText"></p>
+      <div class="contact-cards" id="contactCards"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footerName"></span>. <span data-ui="rights"></span></p>
+  </footer>
+
+  <button class="to-top" id="toTop" data-ui-label="backToTop">
+    <svg viewBox="0 0 24 24"><path d="M12 5l-7 7h4.5v7h5v-7H19z" /></svg>
+  </button>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
